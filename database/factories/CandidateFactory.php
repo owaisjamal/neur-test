@@ -16,11 +16,18 @@ class CandidateFactory extends Factory
      */
     public function definition()
     {
+        $strengths = ['PHP', 'Laravel', 'Angular', 'React', 'Python', 'Vue.js', 'TailwindCSS', 'Wordpress'];
+        shuffle($strengths);
+
+        $softSkills = ['Diplomacy', 'Team player', 'Leadership', 'Sales experience', 'Presentation abilities', 'Public speaking', 'Conflict management'];
+        shuffle($softSkills);
+
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'description' => $this->faker->text,
-            'strengths' => json_encode(['PHP', 'Laravel', 'Vue.js', 'TailwindCSS']),
+            'strengths' => json_encode(array_slice($strengths, 0, 4)),
+            'soft_skills' => json_encode(array_slice($softSkills, 0, 4)),
         ];
     }
 }

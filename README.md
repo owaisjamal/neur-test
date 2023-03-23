@@ -19,6 +19,12 @@ The other feature that is part of this test assignment is to `Hire a candidate`.
 When a company hires a candidate we should mark the candidate as `hired`, put back 5 coins in the wallet of the company, and send an email to the candidate to tell them they were hired.
 A company can hire only candidates that they have contacted before.
 
+On the front end side, there's a couple of small things we'd like to see you change / implement:
+ * When a strength is found within the array of desired strengths (present already in the component under data) change the background color of the badge to green
+ * Pick any two soft skills you wish from the seeded ones, and make your own desiredSkills list. Apply the same background color change, but aim to use the same piece of code used for highlighting skills.
+ * Hide the candidates that know Wordpress from the user, without actually removing their corresponding html elements
+ * Include the MvpCandidates component at the bottom of the candidates page, and make sure to filter the people array to only display the correct ones based on the isMvp flag
+
 Aside from the features, we're aware that this app is far from perfect, so we'd like you to fix/improve anything that you find to be wrong or needs improvement (code, architecture, naming, readability, robustness, etc.).
 
 ## Keypoints
@@ -50,4 +56,4 @@ _**This app was created only for the purpose of the test assignment and code qua
 
 ## Get started
 
-Use this repository as your starting point, but **DO NOT** fork it. Create a private repository on GitHub for your application source code, push it, give access to **@zbiller** to it and send the link to us.
+Use this repository as your starting point, but **DO NOT** fork it. Create a private repository on GitHub for your application source code, push it, give access to **@zbiller**, **@dragosdm** & **@edd-at-neurony** to it and send the link to us.

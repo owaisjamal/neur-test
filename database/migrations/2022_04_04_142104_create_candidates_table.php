@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->text('description');
             $table->json('strengths');
+            $table->json('soft_skills');
             $table->timestamps();
         });
     }
