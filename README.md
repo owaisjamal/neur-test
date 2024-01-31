@@ -1,6 +1,16 @@
 
 # Neurony code test assignment
 
+## Setting UP
+
+Need to install some libraries before starting the project
+
+npm install vue-axios axios
+npm install vue-toastification
+php artisan migrate
+
+Note: Do update the gmail password for sending emails in env
+
 ## Description
 
 In this test assignment we have prepared a hiring platform where job seekers (candidates) can be found and get contacted and hired by companies' hiring managers.
