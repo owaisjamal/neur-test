@@ -43,7 +43,7 @@ class CandidateController extends Controller
             // Charge the company 5 coins
             $wallet->decrement('coins', 5);
         } catch (Exception $ex) {
-            return response()->json(['message' => $ex->getMessage()]);
+            return response()->json(['message' => $ex->getMessage()], 403);
         }
 
         // Optionally, you might want to log the contact action or perform other actions
@@ -68,7 +68,7 @@ class CandidateController extends Controller
             // Put back 5 coins in the company's wallet
             $wallet->increment('coins', 5);
         } catch (Exception $ex) {
-            return response()->json(['message' => $ex->getMessage()]);
+            return response()->json(['message' => $ex->getMessage()], 403);
         }
 
         // Optionally, you might want to log the hire action or perform other actions

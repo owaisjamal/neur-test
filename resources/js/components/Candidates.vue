@@ -127,10 +127,19 @@ export default {
           this.updateWalletCoins(response.data.coins);
         }
 
-        this.$toast.success("Candidate contacted successfully");
+        this.$toast.success(response.data.message);
         // Optionally, update the candidate object or reload the data from the server
       } catch (error) {
-        // ... (existing error handling code)
+        // Check if the error has a 'response' property and 'data' property
+        if (error.response && error.response.data) {
+          const { message } = error.response.data;
+
+          // Show the error message in the toast
+          this.$toast.error(message);
+        } else {
+          // Handle other types of errors
+          this.$toast.error("An unexpected error occurred.");
+        }
       } finally {
         this.loading = false; // Hide loading overlay
       }
