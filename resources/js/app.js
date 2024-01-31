@@ -5,8 +5,20 @@
  */
 
 require('./bootstrap');
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 window.Vue = require('vue').default;
+
+const options = {
+  // You can customize the options here
+};
+
+
+Vue.use(VueAxios, axios);
+Vue.use(Toast, options);
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,6 +32,8 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('candidates', require('./components/Candidates.vue').default);
+Vue.component('mvp-candidates', require('./components/MvpCandidates.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

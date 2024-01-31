@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  # PHP-FPM Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: neur-test
+    restart: unless-stopped
+    working_dir: /var/www/neur-test
+    volumes:
+      - .:/var/www/neur-test
+    networks:
+      - app-network
+
+  # Nginx Service
+  web:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    working_dir: /var/www/neur-test
+    volumes:
+      - ./public:/var/www/neur-test/public
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

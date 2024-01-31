@@ -12,7 +12,7 @@
     "devDependencies": {
         "@popperjs/core": "^2.10.2",
         "autoprefixer": "^10.4.4",
-        "axios": "^0.25",
+        "axios": "^0.25.0",
         "bootstrap": "^5.1.3",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
@@ -24,5 +24,9 @@
         "vue": "^2.6.12",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "vue-axios": "^3.5.2",
+        "vue-toastification": "^1.7.14"
     }
 }
